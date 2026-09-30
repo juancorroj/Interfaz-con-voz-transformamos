@@ -1,6 +1,27 @@
 import { useEffect, useState } from 'react';
 import { AudioLines, ArrowRight, BrainCircuit, HeartHandshake, MessageCircle, UserCheck, Users, Workflow, Building2, Database, ScanLine, Sparkles, Play, Pause, Check } from 'lucide-react';
 
+export function PitchSessionClock() {
+  const [seconds, setSeconds] = useState(0);
+  useEffect(() => {
+    const start = performance.now();
+    const timer = window.setInterval(() => {
+      const elapsed = Math.min(10, (performance.now() - start) / 1000);
+      setSeconds(elapsed);
+      if (elapsed >= 10) window.clearInterval(timer);
+    }, 50);
+    return () => window.clearInterval(timer);
+  }, []);
+  const minutes = Math.min(30, Math.floor(seconds) * 3);
+  return <div className="pitch-session-timer">
+    <div className="pitch-session-clock pitch-session-progress" role="img" aria-label={`${minutes} de 30 minutos de sesión; simulación acelerada`}>
+      <svg viewBox="0 0 180 180" aria-hidden="true"><circle className="session-track" cx="90" cy="90" r="84"/><circle className="session-progress" cx="90" cy="90" r="84" pathLength="100" strokeDasharray="100" strokeDashoffset={100 - seconds * 10}/></svg>
+      <span>{minutes}</span><strong>MINUTOS</strong>
+    </div>
+    <small>Escuchar · Comprender · Registrar</small>
+  </div>;
+}
+
 function useVisualLoop(count: number, duration: number) {
   const [step, setStep] = useState(0);
   const [playing, setPlaying] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);

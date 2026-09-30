@@ -27,3 +27,14 @@
 @keyframes pitch-packet-down{from{top:0;opacity:0}20%{opacity:1}80%{opacity:1}to{top:100%;opacity:0}}
 @media(max-width:480px){.pitch-orbit-node{width:77px;padding:10px 3px;gap:6px;border-radius:10px}.pitch-orbit-node svg{width:18px;height:18px}.pitch-orbit-node span{font-size:8px}.pitch-memory-core{gap:6px}.pitch-memory-core strong{font-size:12px}.pitch-memory-core svg{width:27px;height:27px}.pitch-memory-core>span{font-size:6px;letter-spacing:1px}.pitch-impact-levels{grid-template-columns:1fr;gap:30px}.pitch-impact-levels:before{display:none}}
 @media(prefers-reduced-motion:reduce){.pitch-cosmos *,.pitch-live-flow *,.pitch-impact-ripple *{animation:none!important;transition:none!important}.pitch-packet-lane i{display:none}}
+
+/* Sesión de Mateo: 30 minutos representados en diez segundos. */
+.pitch-session-timer{flex:0 0 180px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.pitch-session-timer .pitch-session-progress{position:relative;width:180px;height:180px;flex:none;border:0;animation:none}
+.pitch-session-progress>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform:rotate(-90deg)}
+.pitch-session-progress circle{fill:none;stroke-width:3}
+.pitch-session-progress .session-track{stroke:#60796940}
+.pitch-session-progress .session-progress{stroke:#b5ecd1;stroke-linecap:round;filter:drop-shadow(0 0 5px #a3e8d066)}
+.pitch-session-progress>span{font-variant-numeric:tabular-nums}
+.pitch-session-timer>small{text-align:center;font-size:10px;line-height:1.7;color:#a3b6bf;max-width:180px}
+@media(max-width:800px){.pitch-session-timer{flex:auto;align-self:center}}

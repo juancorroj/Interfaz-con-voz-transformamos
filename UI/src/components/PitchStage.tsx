@@ -3,7 +3,7 @@ import { AudioLines, ArrowRight, ChevronLeft, ChevronRight, Play, Pause, Maximiz
 import { ConversationOffice } from './ConversationOffice';
 import '../pitch-motion.css';
 import { pitchScenes as scenes } from '../data/pitchScenes';
-import { PitchIntro, PitchFlow, PitchBenefits, pitchAudiences } from './PitchVisuals';
+import { PitchIntro, PitchFlow, PitchBenefits, PitchSessionClock, pitchAudiences } from './PitchVisuals';
 import '../pitch-module-two.css';
 import '../pitch-cinematic.css';
 
@@ -33,7 +33,7 @@ export function PitchStage({ recording, onRecording, onInspect, onPanel }: { rec
     <div key={`${scene}-${take}`} className={`pitch-screen pitch-motion scene-${sceneStyles[scene]}`}><header className="pitch-brand"><AudioLines size={27}/><strong>ResonancIA</strong><span>UNIVERSIDAD DE LA SABANA · RETO DEL RECTOR</span></header><div className="pitch-heading"><span className="eyebrow">{current.label}</span><h1 aria-label={current.heading}>{current.heading.split(" ").map((word,i)=><span className="pitch-word-mask" aria-hidden="true" key={i}><span style={{animationDelay:`${.15+i*.075}s`}}>{word}</span>{" "}</span>)}</h1><p>{current.lead}</p></div>
       <div className="pitch-visual" key={scene}>
         {scene===0&&<PitchIntro onPanel={onPanel} recording={recording}/>}
-        {scene===1&&<><div className="pitch-case-row"><div className="pitch-quote"><span>LA VOZ DE MATEO · CASO FICTICIO</span><p>“Me está costando estudiar. En casa hay presión económica y me preocupa perder mi beca.”</p></div><div className="pitch-session-clock"><span>30</span><strong>MINUTOS</strong><small>Escuchar · Comprender · Registrar</small></div></div><ProcessVisual/></>}
+        {scene===1&&<><div className="pitch-case-row"><div className="pitch-quote"><span>LA VOZ DE MATEO · CASO FICTICIO</span><p>“Me está costando estudiar. En casa hay presión económica y me preocupa perder mi beca.”</p></div><PitchSessionClock/></div><ProcessVisual/></>}
         {scene===2&&<PitchFlow/>}
         {scene===3&&<div className="pitch-audiences"><div className="pitch-audience-tabs">{pitchAudiences.map((item,i)=>{const Icon=audienceIcons[i];return <button key={item.title} className={i===audience?'active':''} aria-pressed={i===audience} onClick={()=>{setAudience(i);setPlaying(false);}}><Icon size={23}/>{item.title}<ArrowRight size={16}/></button>;})}</div><article key={a.title}><AudienceIcon className="pitch-audience-symbol" aria-hidden="true"/><span className="eyebrow">{a.title}</span><h2>{a.benefit}</h2><div className="audience-output"><small>REALIMENTACIÓN POSIBLE</small><strong>{a.output}</strong></div><small>Ejemplo ilustrativo · Configurable por proceso</small></article></div>}
         {scene===4&&<ConversationOffice compact onInspect={id=>{setPlaying(false);onInspect(id);}}/>}
