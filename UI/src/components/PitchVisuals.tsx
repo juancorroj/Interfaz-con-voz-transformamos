@@ -12,7 +12,7 @@ export function PitchSessionClock() {
     }, 50);
     return () => window.clearInterval(timer);
   }, []);
-  const minutes = Math.min(30, Math.floor(seconds) * 3);
+  const minutes = Math.min(30, Math.floor(seconds * 3));
   return <div className="pitch-session-timer">
     <div className="pitch-session-clock pitch-session-progress" role="img" aria-label={`${minutes} de 30 minutos de sesión; simulación acelerada`}>
       <svg viewBox="0 0 180 180" aria-hidden="true"><circle className="session-track" cx="90" cy="90" r="84"/><circle className="session-progress" cx="90" cy="90" r="84" pathLength="100" strokeDasharray="100" strokeDashoffset={100 - seconds * 10}/></svg>
