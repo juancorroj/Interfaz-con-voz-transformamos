@@ -1,0 +1,57 @@
+/* Entradas de escena exclusivas del Pitch. Se reinician al cambiar de escena o de toma. */
+.pitch-motion .pitch-word-mask{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.13em;margin-bottom:-.13em;white-space:pre}
+.pitch-motion .pitch-word-mask>span{display:inline-block;animation:pitch-word-in .8s cubic-bezier(.16,1,.3,1) both}
+.pitch-motion .pitch-heading>.eyebrow{animation:pitch-soft-in .65s ease both}
+.pitch-motion .pitch-heading>p{animation:pitch-rise-in .8s .85s cubic-bezier(.16,1,.3,1) both}
+.pitch-motion .pitch-brand{animation:pitch-soft-in .6s ease both}
+.pitch-motion .pitch-visual{animation:none}
+.pitch-motion .pitch-quote{animation:pitch-rise-in .85s 1.05s both}
+.pitch-motion .pitch-process{animation:pitch-soft-in .8s 1.3s both}
+.pitch-motion .process-person{animation:pitch-rise-in .8s 1.35s both}
+.pitch-motion .process-station{animation:pitch-rise-in .75s both;animation-delay:1.5s}
+.pitch-motion .process-station:nth-child(2){animation-delay:1.7s}.pitch-motion .process-station:nth-child(3){animation-delay:1.9s}.pitch-motion .process-station:nth-child(4){animation-delay:2.1s}
+.pitch-motion .context-thread{animation:pitch-rise-in .7s 2.35s both}
+.pitch-motion .attention-grid>article,.pitch-motion .care-pair>article{animation:pitch-rise-in .85s 1.05s both}
+.pitch-motion .attention-grid>article:nth-of-type(2),.pitch-motion .care-pair>article:nth-child(2){animation-delay:1.4s}
+.pitch-motion .attention-divider{animation:pitch-soft-in .7s 1.25s both}
+.pitch-motion .attention-conclusion{animation:pitch-rise-in .8s 1.9s both}
+.pitch-motion .cycle-core{animation:pitch-soft-in 1s 1s both}
+.pitch-motion .cycle-orbit>button{animation:pitch-soft-in .6s 1.1s both}
+.pitch-motion .cycle-orbit>button:nth-of-type(2){animation-delay:1.25s}.pitch-motion .cycle-orbit>button:nth-of-type(3){animation-delay:1.4s}.pitch-motion .cycle-orbit>button:nth-of-type(4){animation-delay:1.55s}.pitch-motion .cycle-orbit>button:nth-of-type(5){animation-delay:1.7s}.pitch-motion .cycle-orbit>button:nth-of-type(6){animation-delay:1.85s}.pitch-motion .cycle-orbit>button:nth-of-type(7){animation-delay:2s}.pitch-motion .cycle-orbit>button:nth-of-type(8){animation-delay:2.15s}
+.pitch-motion .cycle-caption{animation:pitch-rise-in .9s 1.7s both}
+.pitch-motion .pitch-audience-tabs>button{animation:pitch-rise-in .65s 1.05s both}
+.pitch-motion .pitch-audience-tabs>button:nth-child(2){animation-delay:1.2s}.pitch-motion .pitch-audience-tabs>button:nth-child(3){animation-delay:1.35s}.pitch-motion .pitch-audience-tabs>button:nth-child(4){animation-delay:1.5s}.pitch-motion .pitch-audience-tabs>button:nth-child(5){animation-delay:1.65s}
+.pitch-motion .pitch-audiences>article{animation:pitch-rise-in .85s 1.6s both}
+.pitch-motion .trust-grid>article{animation:pitch-rise-in .85s 1.1s both}
+.pitch-motion .trust-grid>article:nth-child(2){animation-delay:1.35s}.pitch-motion .trust-grid>article:nth-child(3){animation-delay:1.6s}.pitch-motion .trust-grid>article:nth-child(4){animation-delay:1.85s}
+.pitch-motion .trust-line{animation:pitch-rise-in .85s 2.1s both}
+.pitch-motion .closing-orbit{animation:pitch-soft-in 1.2s .85s both}
+.pitch-motion .pitch-closing h2{animation:pitch-rise-in 1s 1.15s both}
+.pitch-motion .closing-steps{animation:pitch-rise-in .8s 1.8s both}
+.pitch-motion .pitch-closing>.primary{animation:pitch-soft-in .8s 2.2s both}
+.pitch-motion .pitch-screen-footer{animation:pitch-soft-in .8s 2.4s both}
+@keyframes pitch-word-in{from{opacity:0;transform:translateY(110%) rotate(2deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+@keyframes pitch-rise-in{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pitch-soft-in{from{opacity:0}to{opacity:1}}
+
+/* Variante de la oficina para cámara; la vista de exploración conserva su diseño. */
+.pitch-stage .co-pitch{padding:0;margin:0;border:0;background:transparent;animation:pitch-soft-in 1s .9s both}
+.pitch-stage .co-pitch .co-intro,.pitch-stage .co-pitch .co-source,.pitch-stage .co-pitch .co-inspector,.pitch-stage .co-pitch .co-timeline,.pitch-stage .co-pitch .co-result,.pitch-stage .co-pitch .co-footnote,.pitch-stage .co-pitch .office-world-hint{display:none}
+.pitch-stage .co-pitch .co-layout{display:block}
+.pitch-stage .co-pitch .office-world{width:100%;max-width:1100px;margin:0 auto;border:0;border-radius:0;background:transparent}
+.pitch-stage .co-pitch .office-world-svg{height:auto;min-width:0}
+.pitch-stage .co-pitch .office-world-svg>rect:first-of-type{fill:transparent;stroke:none}
+.pitch-stage .co-pitch .office-world-toolbar{display:none}
+.pitch-stage .co-pitch .co-controls{margin:0 0 12px;justify-content:center;gap:22px}
+.pitch-stage .co-pitch .co-scene-progress{max-width:1100px;margin:0 auto 8px}
+.pitch-stage .co-pitch .co-narration{max-width:1100px;margin:0 auto;padding:15px 0 0}
+.pitch-stage .co-pitch .co-narration h3{font-size:17px}
+.pitch-stage .co-pitch .co-narration small{display:none}
+.pitch-stage .co-pitch .co-step-number{height:33px;width:33px;font-size:12px}
+.video-mode .co-pitch .co-controls,.video-mode .co-pitch .office-world-toolbar{display:none}
+.video-mode .scene-5 .pitch-heading{margin:18px 0}
+.video-mode .scene-5 .pitch-heading h1{font-size:clamp(28px,3vw,43px)}
+.video-mode .co-pitch .office-world-svg{height:clamp(360px,calc(100vh - 265px),900px)}
+.video-mode .co-pitch .co-narration p{margin:4px 0 0}
+@media(max-width:600px){.pitch-stage .co-pitch .office-world-svg{height:auto;min-width:520px}.pitch-stage .co-pitch .co-controls{gap:12px}.pitch-stage .co-pitch .co-narration{gap:10px}}
+@media(prefers-reduced-motion:reduce){.pitch-motion *{animation:none!important;transition:none!important}.pitch-motion .pitch-word-mask>span{opacity:1;transform:none}}
