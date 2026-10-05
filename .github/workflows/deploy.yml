@@ -35,6 +35,8 @@ jobs:
           cache-dependency-path: UI/package-lock.json
       - name: Instalar dependencias
         run: npm ci
+      - name: Ejecutar pruebas
+        run: npm test
       - name: Compilar la interfaz
         run: npm run build
       - name: Preparar GitHub Pages

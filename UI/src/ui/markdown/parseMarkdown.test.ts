@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { MarkdownParser, inlineText, parseInline } from './parseMarkdown';
-import declaracion from '../../../../Dossier/DECLARACION_DE_ALCANCE_LIMITES_Y_VERIFICABILIDAD.md?raw';
-import verificacion from '../../../../Dossier/VERIFICACION_ACUSTICA_INDEPENDIENTE.md?raw';
-import hallazgos from '../../../../Dossier/REGISTRO_CIERRE_HALLAZGOS_STRESS_TEST.md?raw';
-import indice from '../../../../Dossier/INDICE.md?raw';
+import declaracion from '../../content/support-documents/DECLARACION_DE_ALCANCE_LIMITES_Y_VERIFICABILIDAD.md?raw';
+import verificacion from '../../content/support-documents/VERIFICACION_ACUSTICA_INDEPENDIENTE.md?raw';
+import hallazgos from '../../content/support-documents/REGISTRO_CIERRE_HALLAZGOS_STRESS_TEST.md?raw';
+import indice from '../../content/support-documents/INDICE.md?raw';
 
 const parser = new MarkdownParser();
 

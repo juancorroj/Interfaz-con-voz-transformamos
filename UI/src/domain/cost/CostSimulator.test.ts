@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import studyJson from '../../../../Implementacion/modelo_costos_2026_resultados.json';
+import studyJson from './fixtures/modelo_costos_2026_resultados.json';
 import { CostSimulator } from './CostSimulator';
 import { architectures, baselineInput, priceBook, SESSIONS_BUDGET, SESSIONS_INSTITUTIONAL, TRM_PLANNING } from './pricing2026';
 

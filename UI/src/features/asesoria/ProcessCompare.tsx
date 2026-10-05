@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { ChevronLeft, ChevronRight, Pause, Play, RotateCcw } from 'lucide-react';
-// El motor de diagramas vive en la carpeta Archify del repositorio; Vite compila su TypeScript directamente.
-import { DiagramaProceso, usarSimulacion } from '../../../../Archify/src/react';
-import { servicioDiagramas } from '../../../../Archify/src/aplicacion/ServicioDiagramas';
+// Copia autocontenida del motor Archify para compilar la web sin el repositorio privado.
+import { DiagramaProceso, usarSimulacion } from '../../vendor/archify/react';
+import { servicioDiagramas } from '../../vendor/archify/aplicacion/ServicioDiagramas';
 import { Reveal } from '../../ui/motion/Reveal';
 import type { CompareSummaryRow } from '../../content/types';
 

@@ -1,0 +1,250 @@
+{
+  "fecha_precios": "2026-09-27",
+  "generado": "2026-09-27",
+  "trm_cop": 4200.0,
+  "supuestos": {
+    "audio_segundos": 2400,
+    "tokens_audio": 60000,
+    "tokens_texto_entrada": 10500,
+    "tokens_salida": 6000,
+    "factor_malla_completa": 3.4
+  },
+  "precios_usd_por_millon": {
+    "gemini-3.8-flash": {
+      "audio": 1.5,
+      "in": 1.5,
+      "out": 7.5,
+      "nota": "Tarifa plena desde 2027-01-01. Hasta 2026-12-31 cuesta la mitad"
+    },
+    "gemini-3.5-flash-lite": {
+      "audio": 0.3,
+      "in": 0.3,
+      "out": 2.5,
+      "nota": ""
+    },
+    "gemini-3.1-flash-lite": {
+      "audio": 0.5,
+      "in": 0.25,
+      "out": 1.5,
+      "nota": ""
+    },
+    "gemini-3.5-flash": {
+      "audio": null,
+      "in": 1.5,
+      "out": 9.0,
+      "nota": "Sin tarifa de audio publicada"
+    },
+    "claude-haiku-4.5": {
+      "audio": null,
+      "in": 1.0,
+      "out": 5.0,
+      "nota": "Requiere ASR externo"
+    },
+    "claude-sonnet-5": {
+      "audio": null,
+      "in": 2.0,
+      "out": 10.0,
+      "nota": "Requiere ASR externo"
+    },
+    "gpt-6-luna": {
+      "audio": null,
+      "in": 0.1,
+      "out": 0.5,
+      "nota": "Requiere ASR externo"
+    },
+    "gpt-5.6-luna": {
+      "audio": null,
+      "in": 0.2,
+      "out": 1.2,
+      "nota": "Requiere ASR externo"
+    },
+    "gpt-6-sol": {
+      "audio": null,
+      "in": 2.0,
+      "out": 10.0,
+      "nota": "Requiere ASR externo"
+    },
+    "deepseek-v4.1-flash-pico": {
+      "audio": null,
+      "in": 0.3,
+      "out": 1.2,
+      "nota": "01-04 y 06-10 UTC L-V"
+    },
+    "deepseek-v4.1-flash-valle": {
+      "audio": null,
+      "in": 0.15,
+      "out": 0.6,
+      "nota": "Resto del tiempo (-50%)"
+    },
+    "deepseek-v4-pro-pico": {
+      "audio": null,
+      "in": 1.32,
+      "out": 3.96,
+      "nota": ""
+    },
+    "deepseek-v4-pro-valle": {
+      "audio": null,
+      "in": 0.66,
+      "out": 1.98,
+      "nota": ""
+    }
+  },
+  "asr_usd_por_minuto": {
+    "gpt-4o-mini-transcribe": 0.003,
+    "gpt-4o-transcribe": 0.006,
+    "whisper-api": 0.006,
+    "whisper-local-gpu": 0.0
+  },
+  "resultados": [
+    {
+      "arquitectura": "GPT-6 Luna + Whisper local",
+      "modelo": "gpt-6-luna",
+      "asr": "whisper-local-gpu",
+      "marca": "",
+      "usd_agente_acustico": 0.00405,
+      "cop_agente_acustico": 17.0,
+      "usd_malla_completa": 0.01377,
+      "cop_malla_completa": 57.8,
+      "nota": "Requiere ASR externo"
+    },
+    {
+      "arquitectura": "DeepSeek V4.1 Flash (valle) + Whisper local",
+      "modelo": "deepseek-v4.1-flash-valle",
+      "asr": "whisper-local-gpu",
+      "marca": "",
+      "usd_agente_acustico": 0.00517,
+      "cop_agente_acustico": 21.7,
+      "usd_malla_completa": 0.01759,
+      "cop_malla_completa": 73.9,
+      "nota": "Resto del tiempo (-50%)"
+    },
+    {
+      "arquitectura": "DeepSeek V4.1 Flash (pico) + Whisper local",
+      "modelo": "deepseek-v4.1-flash-pico",
+      "asr": "whisper-local-gpu",
+      "marca": "",
+      "usd_agente_acustico": 0.01035,
+      "cop_agente_acustico": 43.5,
+      "usd_malla_completa": 0.03519,
+      "cop_malla_completa": 147.8,
+      "nota": "01-04 y 06-10 UTC L-V"
+    },
+    {
+      "arquitectura": "DeepSeek V4 Pro (valle) + Whisper local",
+      "modelo": "deepseek-v4-pro-valle",
+      "asr": "whisper-local-gpu",
+      "marca": "",
+      "usd_agente_acustico": 0.01881,
+      "cop_agente_acustico": 79.0,
+      "usd_malla_completa": 0.06395,
+      "cop_malla_completa": 268.6,
+      "nota": ""
+    },
+    {
+      "arquitectura": "Gemini 3.5 Flash-Lite (nativo)",
+      "modelo": "gemini-3.5-flash-lite",
+      "asr": "nativo multimodal",
+      "marca": "",
+      "usd_agente_acustico": 0.03615,
+      "cop_agente_acustico": 151.8,
+      "usd_malla_completa": 0.12291,
+      "cop_malla_completa": 516.2,
+      "nota": ""
+    },
+    {
+      "arquitectura": "Claude Haiku 4.5 + Whisper local",
+      "modelo": "claude-haiku-4.5",
+      "asr": "whisper-local-gpu",
+      "marca": "",
+      "usd_agente_acustico": 0.0405,
+      "cop_agente_acustico": 170.1,
+      "usd_malla_completa": 0.1377,
+      "cop_malla_completa": 578.3,
+      "nota": "Requiere ASR externo"
+    },
+    {
+      "arquitectura": "Gemini 3.1 Flash-Lite (nativo)",
+      "modelo": "gemini-3.1-flash-lite",
+      "asr": "nativo multimodal",
+      "marca": "",
+      "usd_agente_acustico": 0.04163,
+      "cop_agente_acustico": 174.8,
+      "usd_malla_completa": 0.14153,
+      "cop_malla_completa": 594.4,
+      "nota": ""
+    },
+    {
+      "arquitectura": "GPT-6 Luna + gpt-4o-mini-transcribe",
+      "modelo": "gpt-6-luna",
+      "asr": "gpt-4o-mini-transcribe",
+      "marca": "",
+      "usd_agente_acustico": 0.12405,
+      "cop_agente_acustico": 521.0,
+      "usd_malla_completa": 0.42177,
+      "cop_malla_completa": 1771.4,
+      "nota": "Requiere ASR externo"
+    },
+    {
+      "arquitectura": "Gemini 3.8 Flash (nativo multimodal)",
+      "modelo": "gemini-3.8-flash",
+      "asr": "nativo multimodal",
+      "marca": "USADA EN EL MVP",
+      "usd_agente_acustico": 0.15075,
+      "cop_agente_acustico": 633.1,
+      "usd_malla_completa": 0.51255,
+      "cop_malla_completa": 2152.7,
+      "nota": "Tarifa plena desde 2027-01-01. Hasta 2026-12-31 cuesta la mitad"
+    },
+    {
+      "arquitectura": "Claude Haiku 4.5 + gpt-4o-mini-transcribe",
+      "modelo": "claude-haiku-4.5",
+      "asr": "gpt-4o-mini-transcribe",
+      "marca": "",
+      "usd_agente_acustico": 0.1605,
+      "cop_agente_acustico": 674.1,
+      "usd_malla_completa": 0.5457,
+      "cop_malla_completa": 2291.9,
+      "nota": "Requiere ASR externo"
+    },
+    {
+      "arquitectura": "Claude Sonnet 5 + gpt-4o-mini-transcribe",
+      "modelo": "claude-sonnet-5",
+      "asr": "gpt-4o-mini-transcribe",
+      "marca": "",
+      "usd_agente_acustico": 0.201,
+      "cop_agente_acustico": 844.2,
+      "usd_malla_completa": 0.6834,
+      "cop_malla_completa": 2870.3,
+      "nota": "Requiere ASR externo"
+    },
+    {
+      "arquitectura": "GPT-6 Sol + gpt-4o-transcribe",
+      "modelo": "gpt-6-sol",
+      "asr": "gpt-4o-transcribe",
+      "marca": "",
+      "usd_agente_acustico": 0.321,
+      "cop_agente_acustico": 1348.2,
+      "usd_malla_completa": 1.0914,
+      "cop_malla_completa": 4583.9,
+      "nota": "Requiere ASR externo"
+    }
+  ],
+  "proyeccion_anual_cop_malla_completa": {
+    "1000": {
+      "mvp_cop": 2152700,
+      "mas_economico_cop": 57800
+    },
+    "5000": {
+      "mvp_cop": 10763500,
+      "mas_economico_cop": 289000
+    },
+    "20000": {
+      "mvp_cop": 43054000,
+      "mas_economico_cop": 1156000
+    },
+    "50000": {
+      "mvp_cop": 107635000,
+      "mas_economico_cop": 2890000
+    }
+  }
+}
