@@ -1,0 +1,33 @@
+/*
+ * Tokens de diseño de las páginas nuevas.
+ *
+ * Los tokens base (--bg, --surface, --line, --text, --muted, --mint) ya están
+ * definidos en `.resonancia-shell` (resonancia.css) y no se redefinen aquí.
+ * Este archivo solo agrega los valores que hoy están repetidos a mano en el CSS
+ * (acentos por fase, radios, movimiento) con los mismos valores, para que las
+ * primitivas de `ui/` los reutilicen sin copiar hexadecimales.
+ */
+.resonancia-shell {
+  /* Acento por fase: Escucha reutiliza --mint */
+  --accent-escucha: var(--mint);
+  --accent-comprension: #bbadf1;
+  --accent-realimentacion: #93c4f4;
+  --accent-warm: #d5b878;
+
+  /* Superficies */
+  --surface-raised: #16212b;
+  --surface-dialog: #131e29;
+  --surface-note: #17282e;
+
+  /* Radios */
+  --radius-sm: 5px;
+  --radius-md: 7px;
+  --radius-lg: 9px;
+  --radius-xl: 13px;
+
+  /* Movimiento */
+  --motion-fast: 0.2s;
+  --motion-base: 0.45s;
+  --motion-slow: 0.8s;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}

@@ -1,0 +1,13 @@
+/* Colores por función en la malla y su leyenda. Se carga después de pitch.css y solo afecta a la malla de la web. */
+.agent-mesh .mesh-node.cat-verify { border-color: #8a6f2f; background: #2a2412; color: #ecd9a0; }
+.agent-mesh .mesh-node.cat-verify small { color: #b79a52; }
+.agent-mesh .mesh-node.cat-deliver { border-color: #34607e; background: #12273a; color: #b5d6ee; }
+.agent-mesh .mesh-node.cat-deliver small { color: #6f9bbd; }
+.agent-mesh .mesh-node.cat-verify.active, .agent-mesh .mesh-node.cat-deliver.active, .agent-mesh .mesh-node.cat-work.active, .agent-mesh .mesh-node.orchestrator.active { border-color: #a0d5bd; background: #254339; color: #d5f8e6; box-shadow: 0 0 30px #a3e8d01c; }
+.mesh-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 0; margin: 14px 0 0; font-size: 11px; color: var(--muted); }
+.mesh-legend li { display: inline-flex; align-items: center; gap: 8px; }
+.mesh-legend i { width: 12px; height: 12px; border-radius: 3px; border: 1px solid; }
+.mesh-legend .cat-orchestrator i { border-color: #756291; background: #29253c; }
+.mesh-legend .cat-work i { border-color: #324a52; background: #142530; }
+.mesh-legend .cat-verify i { border-color: #8a6f2f; background: #2a2412; }
+.mesh-legend .cat-deliver i { border-color: #34607e; background: #12273a; }

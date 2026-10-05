@@ -15,20 +15,34 @@ Abrir la dirección indicada por Vite (normalmente http://127.0.0.1:3000). Compi
 
 ## Presentar
 
-En la navegación, elegir **Pitch**, o **Abrir el pitch** desde Panorama. Son ocho escenas alineadas con el guion de video actualizado en `Pitch/Pitch_Maestro_ResonancIA_5Minutos.md`. Las pautas suman cinco minutos; la duración de la locución requiere ensayo humano. Se puede avanzar con las flechas del teclado, seleccionar escenas, consultar notas o reproducir la pauta automática.
+En la navegación, elegir **Pitch**. Son ocho escenas alineadas con el guion de video actualizado en `Pitch/Pitch_Maestro_ResonancIA_5Minutos.md`. Las pautas suman cinco minutos; la duración de la locución requiere ensayo humano. Se puede avanzar con las flechas del teclado, seleccionar escenas, consultar notas o reproducir la pauta automática.
 
 **Modo grabación** oculta la navegación y los controles de presentación; no graba video. Escape devuelve los controles. Para un avance automático durante la captura, iniciar antes **Reproducir pauta**. También hay una opción de pantalla completa. La barra lateral se puede contraer sin perder el logo ni los accesos.
 
 ## Vistas y fuentes
 
-- Panorama: composición original con galaxia, propósito y tres etapas.
-- Pitch: ocho escenas para video, notas de locución y pauta de cinco minutos.
-- Malla de agentes: diagramas interactivos de Escucha y Realimentación, selección de nodos, animación explicativa y acceso al documento de cada agente. La topología es simplificada, sin ejecución real.
-- Catálogo de agentes: instantánea de 16 especificaciones del caso psicopedagógico y 5 roles de apoyo metodológico; no son cantidades universales ni ejecuciones en vivo. `src/data/agents.json` conserva textos de origen como documentación histórica, no garantías del producto. Actualizar con `npm run sync:agents` cuando cambien las especificaciones.
-- Recorrido: guion de cinco capítulos con autorización demostrativa, diagrama de responsabilidades y ejemplos de beneficios.
-- Memoria: Alex y Sam son personas completamente ficticias, definidas en `src/data/demoCases.ts`. Se distinguen expresión, observación y señal pendiente de valoración.
-- Personas y públicos: cinco casos con seis pasos. Profesores adapta el caso documentado en `Agents-metodologia-priorización/testing/simulacion_docentes_formacion.md`, sin reutilizar sus cifras o garantías. Los demás escenarios adicionales son exploratorios.
-- Panel del profesional: selección de vistas de demostración, búsqueda, acuerdos, borradores revisables, cierre simulado y restablecimiento. Los acuerdos comparten estado con Memoria. Los registros históricos y los componentes anteriores se conservan en el repositorio, pero no se importan desde el recorrido público.
+La web se organiza en siete grupos del menú. El registro único está en `src/app/sections.ts`; agregar una página es registrarla ahí. El contenido que proviene de la ficha técnica vive en `src/content/ficha/`, y los componentes solo lo pintan.
+
+| Grupo | Páginas | Fuente principal |
+|---|---|---|
+| Presentar | **Pitch**: ocho escenas, notas de locución y modo grabación (sin cambios) | `Pitch/Pitch_Maestro_ResonancIA_5Minutos.md` |
+| Empezar | **Bienvenida y guía**: entrada con galaxia y cifras, ¿Qué es ResonancIA?, por dónde empezar, mapa de la web tipo metro y alcance con la leyenda de sellos (absorbió a Panorama; `#/inicio` redirige) | Ficha (Descripción) |
+| Conocer | **La solución**, **Beneficios** (4 pestañas), **Lo que nos hace distintos**, **Preguntas frecuentes** (27) | Ficha (B.1 a B.3) |
+| Caso Asesoría | **Asesoría Psicopedagógica** con siete pestañas: Resumen, Proceso, Malla de agentes, Catálogo, Memoria viva, Panel del profesional, Validación | `Casos-de-uso/Asesoria-Psicopedagogica`, `src/data/agents.json` |
+| Otros públicos | **Casos de uso por público**: Panorama y una pestaña por público (Estudiantes, Graduados, Profesores, Administrativos, Aliados) | `Casos-de-uso/MATRIZ_REUTILIZACION_AGENTES.md` |
+| Gobierno | **Ética y marco legal**, **Implementación**, **Costos** (cifras de la ficha y simulador con escenarios guardados y comparación) | Ficha, `Implementacion/` |
+| Anexos | **Soporte técnico** (resumen del Dossier y lectura de sus `.md`) y **Equipo** (se abre desde el pie del menú) | `Dossier/`, ficha (Equipo) |
+
+Detalles que conviene saber:
+
+- Todas las páginas tienen URL por hash (`#/costos`, `#/publicos/profesores`, `#/preguntas?q=...`, `#/soporte?doc=hallazgos`). Las rutas antiguas (`#/malla`, `#/agentes`, `#/memoria`, `#/operacion`) siguen funcionando y llevan a la pestaña correspondiente de Asesoría.
+- Los sellos son tres y significan lo mismo en toda la web: *Ejecutado y validado* (solo Asesoría), *Diseñado, no ejecutado* y *Ejemplo ficticio*.
+- El simulador de costos reproduce el modelo de `Implementacion/modelo_costos_2026.py`; las pruebas comparan sus resultados con `modelo_costos_2026_resultados.json`. Los escenarios guardados usan su propia clave de `localStorage`, distinta de la del panel.
+- El lector de Markdown de Soporte técnico no es una librería: es un analizador propio (`src/ui/markdown`) que nunca inserta HTML. Lee `.md` de `Dossier/` bajo demanda; por eso `vite.config.ts` permite el acceso a la carpeta superior. Solo se leen completos los documentos revisados; los dos dossiers extensos se resumen.
+- El Recorrido guiado anterior (`GuidedExperience`) sigue en el código, oculto del menú; su contenido quedó cubierto por Proceso, Memoria viva, Beneficios y Casos de uso por público.
+- Las páginas se descargan al visitarlas (carga bajo demanda). La primera carga trae solo el marco, la Bienvenida y el Panorama.
+
+Pruebas: `npm test` ejecuta las pruebas de registro de secciones, rutas, contenido de la ficha, modelo de costos, escenarios, analizador de Markdown y cobertura de la ficha.
 
 ## Estado y límites
 
@@ -38,4 +52,4 @@ La aplicación no graba audio, ejecuta agentes, autentica usuarios, manda comuni
 
 Pendientes: procedimiento de autorización; captura, almacenamiento y conservación; política de acceso y cambio de responsable; controles de servidor; canales e integraciones; validación de escenarios y criterios analíticos con cada área; ensayo cronometrado.
 
-Ver `CAMBIOS_REUNION_22_SEPT.md` para el registro de tareas y verificaciones.
+Ver `CAMBIOS_REUNION_22_SEPT.md` y `CAMBIOS_INMERSION_25_SEPT.md` para los registros anteriores, y `CAMBIOS_UPGRADE_UI.md` para la reorganización por fases.

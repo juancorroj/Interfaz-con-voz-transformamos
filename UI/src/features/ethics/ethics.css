@@ -1,0 +1,134 @@
+.eth-section { padding: 38px 0 6px; margin-top: 30px; border-top: 1px solid var(--line); scroll-margin-top: 56px; }
+.eth-section > h2 { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.eth-section > h2 svg { color: var(--accent-warm, #d5b878); flex-shrink: 0; }
+.eth-lead { max-width: 820px; margin-bottom: 20px; font-size: 13px; line-height: 1.9; color: #b9c8d0; }
+.eth-sub { margin: 30px 0 14px; font-size: 15px; font-weight: 550; }
+
+/* Título y texto de apertura */
+.resonancia-shell .ethics .eth-hero-lead { max-width: none; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.85; color: #c3d2d8; }
+
+/* Sellos */
+.seals { margin: 4px 0 18px; padding: 26px 28px 20px; border: 1px solid var(--line); border-radius: var(--radius-lg, 9px); background: radial-gradient(120% 140% at 0% 0%, #1a2f33 0%, #101821 55%); }
+.seals-groups { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 34px; }
+.seals-group h2 { margin-bottom: 16px; font-size: 10px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: var(--muted); }
+.seals-group ul { list-style: none; display: flex; flex-wrap: wrap; gap: 18px 14px; padding: 0; margin: 0; }
+.seals-group + .seals-group { padding-left: 34px; border-left: 1px solid var(--line); }
+.seal { display: grid; justify-items: center; gap: 10px; width: 112px; color: var(--muted); text-align: center; transition: transform var(--motion-fast, .2s); }
+.seal:hover { transform: translateY(-4px); }
+.seal:hover .seal-ring { filter: drop-shadow(0 0 10px #a3e8d066); }
+.seal-medal { position: relative; display: grid; place-items: center; align-content: center; gap: 2px; width: 92px; height: 92px; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #26453f, #12201d 70%); color: var(--mint); box-shadow: inset 0 0 0 1px #3d6a5d, 0 6px 18px #0006; }
+.seal-ring { position: absolute; inset: 4px; border-radius: 50%; border: 1px dashed #5d8f82; transition: filter var(--motion-fast, .2s); }
+.seal-medal b { max-width: 78px; font-size: 10px; font-weight: 600; letter-spacing: .3px; line-height: 1.15; color: var(--text); }
+.seal-medal small { font-size: 9px; letter-spacing: 1px; color: var(--mint); }
+.seal-caption { font-size: 11px; line-height: 1.45; }
+.seals-notice { margin-top: 18px; padding-top: 14px; border-top: 1px dashed #35504d; font-size: 12px; line-height: 1.7; color: #b9d9cf; }
+
+/* Explorador de normas */
+.nex { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 28px; align-items: start; }
+.nex-list { display: grid; gap: 18px; }
+.nex-list h3 { margin-bottom: 8px; font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+.nex-list ul { list-style: none; display: grid; gap: 4px; padding: 0; }
+.nex-list button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 14px; border: 1px solid transparent; border-radius: var(--radius-md, 7px); color: var(--muted); text-align: left; transition: background var(--motion-fast, .2s), border-color var(--motion-fast, .2s); }
+.nex-list button:hover { background: #17222d; color: var(--text); }
+.nex-list button.active { background: #1b302f; border-color: #2c4842; color: var(--mint); }
+.nex-list svg { flex-shrink: 0; }
+.nex-list strong { display: block; font-size: 13px; font-weight: 550; color: var(--text); }
+.nex-list button.active strong { color: var(--mint); }
+.nex-list small { display: block; margin-top: 2px; font-size: 11px; color: var(--muted); }
+.nex-panel { position: sticky; top: 70px; padding: 28px; border: 1px solid #3d6a5d; border-radius: var(--radius-lg, 9px); background: linear-gradient(130deg, #17302c, #101821 60%); animation: nex-in .35s ease both; }
+@keyframes nex-in { from { opacity: 0; transform: translateX(10px); } to { opacity: 1; transform: none; } }
+.nex-panel > header { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+.nex-icon { display: grid; place-items: center; flex-shrink: 0; width: 62px; height: 62px; border: 1px solid #496b60; border-radius: 50%; background: #213c33; color: var(--mint); }
+.nex-panel > header small { display: block; margin-bottom: 4px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mint); }
+.nex-panel h3 { font-size: clamp(18px, 1.6vw, 24px); font-weight: 450; letter-spacing: -.4px; line-height: 1.35; }
+.nex-flow { display: grid; grid-template-columns: minmax(0, .9fr) auto minmax(0, 1.2fr); gap: 14px; align-items: stretch; }
+.nex-flow section { padding: 20px; border-radius: var(--radius-md, 7px); }
+.nex-flow section span { display: block; margin-bottom: 10px; font-size: 10px; letter-spacing: 1.4px; text-transform: uppercase; }
+.nex-flow .demands { background: #0e151e; border: 1px dashed #2b3947; }
+.nex-flow .demands span { color: #7b8c9a; }
+.nex-flow .demands p { font-size: 13px; line-height: 1.85; color: #aab9c4; }
+.nex-flow .reflected { background: #15302c; border: 1px solid #3d6a5d; box-shadow: 0 0 30px #a3e8d012; }
+.nex-flow .reflected span { color: var(--mint); }
+.nex-flow .reflected p { font-size: 14px; line-height: 1.85; color: #e0efe9; }
+.nex-arrow { display: grid; place-items: center; color: var(--mint); }
+.nex-arrow .v { display: none; }
+
+/* En la práctica */
+.eth-practice { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; padding: 0; border: 1px solid var(--line); border-radius: var(--radius-lg, 9px); overflow: hidden; }
+.eth-practice li { display: grid; gap: 8px; align-content: start; padding: 26px 24px; background: linear-gradient(180deg, #131e29, #0e151e); }
+.eth-practice li + li { border-left: 1px solid var(--line); }
+.eth-practice-icon { display: grid; place-items: center; width: 54px; height: 54px; margin-bottom: 4px; border: 1px solid #496b60; border-radius: 50%; background: #213c33; color: var(--mint); }
+.eth-card-number { font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--mint); }
+.eth-practice h3, .eth-protocol h3 { font-size: 17px; font-weight: 500; line-height: 1.4; }
+.eth-practice p, .eth-protocol p { font-size: 13px; line-height: 1.85; color: var(--muted); }
+
+/* Señal de riesgo: protocolo */
+.eth-protocol { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 0; margin-bottom: 20px; }
+.eth-protocol li { display: flex; gap: 16px; align-items: flex-start; padding: 22px; border: 1px solid #5a4d2b; border-radius: var(--radius-lg, 9px); background: linear-gradient(130deg, #1b1810, #101821); }
+.eth-protocol-icon { display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; border: 1px solid #5a4d2b; border-radius: 50%; background: #221d10; color: var(--accent-warm, #d5b878); }
+.eth-protocol .eth-card-number { color: var(--accent-warm, #d5b878); }
+
+/* Consentimiento: quién ve qué y agenda abierta */
+/* Mapa de datos: quién ve qué */
+.dmap { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); gap: 34px; align-items: center; margin-bottom: 8px; }
+.dmap-figure { position: relative; margin: 0; }
+.dmap-figure svg { display: block; width: 100%; height: auto; }
+.dmap-ring circle:first-child { fill: #0e151e; stroke: #2b3947; stroke-width: 1.5; transition: fill var(--motion-fast, .2s), stroke var(--motion-fast, .2s); }
+.dmap-ring .dmap-hit { fill: transparent; stroke: none; cursor: pointer; }
+.dmap-ring:hover circle:first-child { stroke: #4b6b64; }
+.dmap-ring.active circle:first-child { fill: #17302c; stroke: var(--mint); stroke-width: 2.5; filter: drop-shadow(0 0 10px #a3e8d044); }
+.dmap-num { cursor: pointer; }
+.dmap-num circle { fill: #111a24; stroke: #496b60; stroke-width: 1.5; }
+.dmap-num text { fill: var(--muted); font-size: 12px; }
+.dmap-num.active circle { fill: var(--mint); stroke: var(--mint); }
+.dmap-num.active text { fill: #10241f; font-weight: 700; }
+.dmap-core { fill: #213c33; stroke: #496b60; stroke-width: 1.5; }
+.dmap-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: grid; justify-items: center; gap: 2px; color: var(--mint); pointer-events: none; text-align: center; }
+.dmap-center small { max-width: 70px; font-size: 9px; line-height: 1.25; color: #b9d9cf; }
+.dmap-figure figcaption { margin-top: 12px; font-size: 12px; line-height: 1.7; color: var(--muted); }
+.dmap-list { list-style: none; display: grid; gap: 6px; padding: 0; margin: 0 0 14px; }
+.dmap-list button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--radius-md, 7px); background: var(--surface); color: var(--muted); font-size: 13px; text-align: left; transition: border-color var(--motion-fast, .2s), background var(--motion-fast, .2s); }
+.dmap-list button:hover { border-color: #4b6b64; color: var(--text); }
+.dmap-list button.active { border-color: var(--mint); background: linear-gradient(130deg, #17302c, #111b25); color: var(--text); }
+.dmap-list svg { flex-shrink: 0; color: var(--mint); }
+.dmap-n { display: grid; place-items: center; flex-shrink: 0; width: 24px; height: 24px; border: 1px solid #496b60; border-radius: 50%; font-size: 11px; color: var(--mint); }
+.dmap-who { display: flex; gap: 16px; align-items: flex-start; padding: 20px 22px; border: 1px solid #3d6a5d; border-radius: var(--radius-lg, 9px); background: #15302c; animation: nex-in .3s ease both; }
+.dmap-who-icon { display: grid; place-items: center; flex-shrink: 0; width: 46px; height: 46px; border: 1px solid #496b60; border-radius: 50%; background: #213c33; color: var(--mint); }
+.dmap-who small { display: block; margin-bottom: 4px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mint); }
+.dmap-who p { font-size: 16px; line-height: 1.7; color: #e0efe9; }
+.eth-agenda { list-style: none; display: grid; gap: 8px; padding: 0; }
+.eth-agenda li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--radius-md, 7px); background: var(--surface); }
+.eth-agenda li > span { display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid #496b60; border-radius: 50%; background: #213c33; color: var(--mint); font-size: 11px; }
+.eth-agenda p { font-size: 13px; line-height: 1.6; }
+.eth-agenda em { padding: 4px 12px; border: 1px solid #3d6a5d; border-radius: 999px; font-size: 11px; font-style: normal; color: var(--mint); white-space: nowrap; }
+
+.eth-risk .ui-callout { margin-bottom: 14px; }
+.eth-risk .text-button { color: var(--mint); }
+
+/* Consentimiento */
+.eth-two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; margin-top: 8px; }
+.eth-checklist { list-style: none; display: grid; gap: 12px; padding: 0; }
+.eth-checklist li { display: flex; gap: 11px; font-size: 13px; line-height: 1.7; color: #c3d2d8; }
+.eth-checklist svg { flex-shrink: 0; margin-top: 4px; color: var(--accent-escucha, var(--mint)); }
+.eth-numbered { list-style: none; display: grid; gap: 14px; padding: 0; }
+.eth-numbered li { display: flex; gap: 14px; align-items: flex-start; }
+.eth-numbered li > span { flex-shrink: 0; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid #496b60; background: #213c33; color: var(--mint); font-size: 11px; }
+.eth-numbered strong { display: block; margin-bottom: 4px; font-size: 13px; font-weight: 550; }
+.eth-numbered small { font-size: 12px; line-height: 1.75; color: var(--muted); }
+.eth-actions { margin-top: 24px; }
+
+
+@media (max-width: 1150px) {
+  .seals-groups, .nex, .eth-practice, .eth-protocol, .eth-two-col { grid-template-columns: minmax(0, 1fr); }
+  .seals-group + .seals-group { padding-left: 0; padding-top: 22px; border-left: 0; border-top: 1px solid var(--line); }
+  .nex-panel { position: static; }
+  .nex-flow { grid-template-columns: minmax(0, 1fr); }
+  .nex-arrow .h { display: none; }
+  .nex-arrow .v { display: block; }
+  .eth-practice li + li { border-left: 0; border-top: 1px solid var(--line); }
+  .dmap { grid-template-columns: minmax(0, 1fr); }
+  .dmap-figure { max-width: 420px; margin: 0 auto; }
+  .eth-agenda li { grid-template-columns: auto minmax(0, 1fr); }
+  .eth-agenda em { grid-column: 2; justify-self: start; }
+}
+@media (prefers-reduced-motion: reduce) { .dmap-who, .dmap-ring circle, .dmap-list button { transition: none; animation: none; } .seal, .seal-ring, .nex-panel, .nex-list button { transition: none; animation: none; } .seal:hover { transform: none; } }

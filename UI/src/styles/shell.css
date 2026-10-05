@@ -1,0 +1,170 @@
+/*
+ * Estilos del marco de la aplicación agregados en la Fase 2: grupos del menú,
+ * navegación entre secciones y pie de página. No modifica las reglas existentes
+ * de resonancia.css ni sidebar.css; las complementa.
+ */
+
+/* ---------- Menú agrupado ---------- */
+.sidebar nav { margin-top: 26px; gap: 4px; }
+.sidebar .nav-group { display: grid; gap: 4px; }
+.sidebar nav button { padding-top: 11px; padding-bottom: 11px; }
+.sidebar .nav-group + .nav-group { margin-top: 8px; }
+.sidebar .nav-group-label {
+  margin: 0 12px 2px;
+  text-transform: uppercase;
+}
+/* Con tantos grupos, el bloque inferior cede espacio para que el menú quepa sin desplazarse. */
+.sidebar-bottom { padding-top: 16px; }
+.sidebar-bottom p { margin: 8px 0 18px; }
+/* En pantallas bajas el lema decorativo cede su lugar al menú. */
+@media (min-width: 801px) and (max-height: 900px) {
+  .sidebar-bottom { padding-top: 8px; }
+  .sidebar-bottom > svg, .sidebar-bottom > p { display: none; }
+  .resonancia-shell .sidebar nav button { padding-top: 6px; padding-bottom: 6px; }
+  .sidebar .nav-group { gap: 2px; }
+  .resonancia-shell.sidebar-collapsed .sidebar nav button { padding-top: 9px; padding-bottom: 9px; }
+  /* Sin rótulos, los grupos se separan con una línea fina para no gastar altura. */
+  .sidebar .nav-group-label { display: none; }
+  .sidebar .nav-group + .nav-group { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
+  .sidebar { scrollbar-width: none; }
+  .sidebar::-webkit-scrollbar { display: none; }
+  .resonancia-shell:not(.sidebar-collapsed) .sidebar { padding-top: 22px; padding-bottom: 14px; }
+  .sidebar nav { margin-top: 18px; }
+  .sidebar .nav-group + .nav-group { margin-top: 6px; }
+}
+/* Con trece entradas, en pantallas muy bajas el menú se compacta un poco más. */
+@media (min-width: 801px) and (max-height: 800px) {
+  .resonancia-shell:not(.sidebar-collapsed) .sidebar nav button { padding-top: 4px; padding-bottom: 4px; }
+  .resonancia-shell.sidebar-collapsed .sidebar nav button { padding-top: 7px; padding-bottom: 7px; }
+  .sidebar .nav-group + .nav-group { margin-top: 4px; padding-top: 4px; }
+  .sidebar .nav-group { gap: 1px; }
+}
+.sidebar-bottom .team { padding-top: 16px; }
+.sidebar-collapsed .nav-group + .nav-group { border-top: 1px solid var(--line); padding-top: 12px; }
+@media (max-width: 800px) {
+  .sidebar nav { margin-top: 20px; }
+  .sidebar .nav-group { display: contents; }
+  .sidebar .nav-group + .nav-group { margin-top: 0; }
+  .sidebar-collapsed .nav-group + .nav-group { border-top: 0; padding-top: 0; }
+}
+
+/* Enlace al equipo (activo cuando existe la página) */
+.sidebar-bottom .team-link { background: none; width: 100%; text-align: left; border-width: 1px 0 0; border-style: solid; border-color: var(--line); border-radius: 0; }
+.sidebar-bottom .team-link:hover > div { color: var(--text); }
+
+/* ---------- Anterior / Siguiente ---------- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.page-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 48%;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg, 9px);
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  transition: border-color var(--motion-fast, .2s), transform var(--motion-fast, .2s), background var(--motion-fast, .2s);
+}
+.page-nav-link.next { margin-left: auto; text-align: right; }
+.page-nav-link:hover { border-color: #6b9d90; background: var(--surface-raised, #16212b); }
+.page-nav-link.prev:hover { transform: translateX(-3px); }
+.page-nav-link.next:hover { transform: translateX(3px); }
+.page-nav-link small { display: block; margin-bottom: 4px; font-size: 9px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); }
+.page-nav-link > svg { color: var(--mint); flex-shrink: 0; }
+.page-nav-link span { font-size: 13px; }
+@media (max-width: 560px) {
+  .page-nav { flex-direction: column; }
+  .page-nav-link, .page-nav-link.next { max-width: none; width: 100%; margin-left: 0; text-align: left; }
+  .page-nav-link.next { justify-content: space-between; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-nav-link, .page-nav-link:hover { transition: none; transform: none; }
+}
+
+/* ---------- Pie de página ---------- */
+.res-footer { flex-wrap: wrap; row-gap: 14px; }
+.res-footer-links { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.res-footer-links button { color: #9fb3bf; font-size: 10px; padding: 2px 0; }
+.res-footer-links button:hover { color: var(--mint); }
+.res-credit {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  letter-spacing: .3px;
+  color: #5f7685;
+}
+.res-credit img { display: block; height: 15px; width: auto; opacity: .7; }
+
+/* ---------- Pestañas de sección ---------- */
+.section-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 8px 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  scrollbar-width: none;
+}
+.section-tabs::-webkit-scrollbar { display: none; }
+.section-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md, 7px);
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+  transition: background var(--motion-fast, .2s), color var(--motion-fast, .2s), border-color var(--motion-fast, .2s);
+}
+.section-tabs button:hover { color: var(--text); background: #17222d; }
+.section-tabs button.active { background: #1b302f; color: var(--mint); border-color: #2c4842; }
+.section-tabs.grouped { gap: 18px; align-items: flex-end; }
+.section-tab-set { display: grid; gap: 4px; flex-shrink: 0; }
+.section-tab-group { padding-left: 4px; font-size: 9px; letter-spacing: 1.4px; text-transform: uppercase; color: #6f8796; white-space: nowrap; }
+.section-tab-set + .section-tab-set { padding-left: 18px; border-left: 1px solid var(--line); }
+.section-tab-row { display: flex; gap: 4px; }
+.section-tab-number { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; border: 1px solid currentColor; font-size: 9px; opacity: .75; }
+@media (max-width: 800px) {
+  .section-tabs { margin: 0 -22px; padding-left: 22px; padding-right: 22px; }
+  .section-tabs button { padding: 9px 11px; }
+}
+@media (max-width: 480px) {
+  .section-tabs { margin: 0 -18px; padding-left: 18px; padding-right: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section-tabs button { transition: none; }
+}
+
+/* ---------- Encabezados de página con más de un párrafo ---------- */
+.page-heading p + p { margin-top: 12px; }
+
+/* ---------- Índice de página (chips de anclas) ---------- */
+.page-index { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.page-index button { padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: 11px; transition: color var(--motion-fast, .2s), border-color var(--motion-fast, .2s); }
+.page-index button:hover { color: var(--mint); border-color: #4b6b64; }
+@media (prefers-reduced-motion: reduce) { .page-index button { transition: none; } }
+
+/* Título de página grande, como el de la entrada: renglones cortos y la última palabra en verde. */
+.resonancia-shell .page-heading h1.display-title { font-size: clamp(38px, 4.1vw, 66px); line-height: 1.13; letter-spacing: -2.8px; font-weight: 450; margin: 26px 0 23px; }
+.page-heading h1.display-title em { font-style: normal; color: var(--mint); }
+@media (max-width: 480px) { .resonancia-shell .page-heading h1.display-title { font-size: 38px; letter-spacing: -1.6px; } }
+
+/* Aviso breve mientras se descarga una página */
+.page-loading { padding: 40px 0; font-size: 13px; color: var(--muted); }

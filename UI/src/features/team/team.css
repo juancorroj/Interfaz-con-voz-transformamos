@@ -1,0 +1,26 @@
+.team-motto { margin: 8px 0 0; font-size: 20px; font-weight: 300; line-height: 1.5; color: var(--mint); }
+.team-section { padding: 38px 0 6px; margin-top: 30px; border-top: 1px solid var(--line); }
+.team-lead { max-width: 820px; margin-bottom: 20px; font-size: 13px; line-height: 1.9; color: #b9c8d0; }
+.team-foot { max-width: 820px; margin-top: 16px; font-size: 12px; line-height: 1.8; color: var(--muted); }
+
+.team-grid { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding: 0; }
+.team-card { display: grid; gap: 10px; justify-items: start; align-content: start; padding: 24px; border: 1px solid var(--line); border-top: 2px solid var(--mint); border-radius: var(--radius-lg, 9px); background: linear-gradient(130deg, #16212b, #101821); }
+.team-avatar { display: grid; place-items: center; width: 52px; height: 52px; border: 1px solid #496b60; border-radius: 50%; background: #213c33; color: var(--mint); font-size: 16px; letter-spacing: 1px; }
+.team-card h3 { margin: 6px 0 0; font-size: 16px; font-weight: 500; line-height: 1.4; }
+.team-card p { font-size: 12px; line-height: 1.8; color: var(--muted); }
+
+.team-cycle { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding: 0; counter-reset: none; }
+.team-cycle li { position: relative; display: grid; gap: 8px; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius-lg, 9px); background: var(--surface); }
+.team-cycle li:not(:last-child)::after { content: ''; position: absolute; top: 50%; right: -15px; width: 14px; height: 1px; background: #3d6a5d; }
+.team-cycle li > span { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid #496b60; background: #213c33; color: var(--mint); font-size: 11px; }
+.team-cycle strong { font-size: 16px; font-weight: 500; }
+.team-cycle small { font-size: 12px; line-height: 1.7; color: var(--muted); }
+
+.team-thanks { display: flex; gap: 14px; align-items: flex-start; font-size: 13px; line-height: 1.85; color: #c6d9de; }
+.team-thanks svg { flex-shrink: 0; margin-top: 3px; color: var(--mint); }
+.team-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+
+@media (max-width: 900px) {
+  .team-grid, .team-cycle, .team-links { grid-template-columns: 1fr; }
+  .team-cycle li:not(:last-child)::after { display: none; }
+}

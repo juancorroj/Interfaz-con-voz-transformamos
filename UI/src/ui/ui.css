@@ -1,0 +1,127 @@
+/* Primitivas visuales compartidas. Usan los tokens de .resonancia-shell y styles/tokens.css. */
+
+/* ---------- StatusBadge ---------- */
+.ui-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: .4px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.ui-badge i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.ui-badge-ejecutado { color: var(--accent-escucha, #a3e8d0); background: #a3e8d012; }
+.ui-badge-disenado { color: var(--accent-comprension, #bbadf1); background: #bbadf112; }
+.ui-badge-ficticio { color: var(--accent-warm, #d5b878); background: #d5b87812; }
+
+/* ---------- Callout ---------- */
+.ui-callout {
+  padding: 18px 20px;
+  border: 1px solid #334a4e;
+  border-left-width: 3px;
+  border-radius: var(--radius-md, 7px);
+  background: var(--surface-note, #17282e);
+  color: #afc9cc;
+  font-size: 12px;
+  line-height: 1.75;
+}
+.ui-callout > strong { display: block; margin-bottom: 8px; color: var(--text); font-size: 12px; font-weight: 600; letter-spacing: .3px; }
+.ui-callout-titled { display: flex; align-items: center; gap: 10px; }
+.ui-callout-titled svg { flex-shrink: 0; color: var(--accent-warm, #d5b878); }
+.ui-callout-info .ui-callout-titled svg { color: var(--mint); }
+.ui-callout-scope { border-left-color: var(--accent-warm, #d5b878); }
+.ui-callout-info { border-left-color: var(--mint); }
+
+/* ---------- StatTile ---------- */
+.ui-stat { display: grid; gap: 6px; padding: 22px 24px; border: 1px solid var(--line); border-radius: var(--radius-lg, 9px); background: linear-gradient(130deg, #16212b, #101821); }
+.ui-stat strong { font-size: 44px; font-weight: 400; letter-spacing: -2px; line-height: 1; color: var(--mint); font-variant-numeric: tabular-nums; }
+.ui-stat span { font-size: 13px; color: var(--text); }
+.ui-stat small { font-size: 11px; line-height: 1.6; color: var(--muted); }
+
+/* ---------- Accordion ---------- */
+.ui-acc { list-style: none; display: grid; gap: 10px; padding: 0; }
+.ui-acc-item { border: 1px solid var(--line); border-radius: var(--radius-lg, 9px); background: var(--surface); transition: border-color var(--motion-fast, .2s), background var(--motion-fast, .2s); scroll-margin-top: 80px; }
+.ui-acc-item.open { border-color: #3d6a5d; background: linear-gradient(130deg, #16212b, #101821); }
+.ui-acc-trigger { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; padding: 18px 20px; text-align: left; color: var(--text); }
+.ui-acc-title { display: grid; gap: 5px; }
+.ui-acc-title small { font-size: 9px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--mint); }
+.ui-acc-title strong { font-size: 14px; font-weight: 500; line-height: 1.5; }
+.ui-acc-trigger > svg { flex-shrink: 0; color: var(--muted); transition: transform var(--motion-base, .45s) var(--ease-out, ease); }
+.ui-acc-item.open .ui-acc-trigger > svg { transform: rotate(180deg); color: var(--mint); }
+.ui-acc-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows var(--motion-base, .45s) var(--ease-out, ease); }
+.ui-acc-item.open .ui-acc-panel { grid-template-rows: 1fr; }
+.ui-acc-inner { overflow: hidden; min-height: 0; padding: 0 20px; visibility: hidden; transition: visibility 0s linear var(--motion-base, .45s); }
+.ui-acc-item.open .ui-acc-inner { visibility: visible; transition-delay: 0s; }
+.ui-acc-item.open .ui-acc-inner { padding-bottom: 18px; }
+@media (prefers-reduced-motion: reduce) {
+  .ui-acc-item, .ui-acc-trigger > svg, .ui-acc-panel { transition: none; }
+}
+
+/* ---------- Timeline ---------- */
+.ui-timeline { position: relative; padding-top: 6px; }
+.ui-timeline-track { position: absolute; top: 28px; left: 7%; right: 7%; height: 2px; background: var(--line); }
+.ui-timeline-fill { display: block; height: 100%; background: linear-gradient(90deg, #4f9d86, var(--mint)); }
+.ui-timeline ol { position: relative; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; padding: 0; }
+.ui-timeline button { display: grid; justify-items: center; gap: 8px; width: 100%; padding: 6px 8px 14px; text-align: center; color: var(--muted); border-radius: var(--radius-md, 7px); transition: color var(--motion-fast, .2s), background var(--motion-fast, .2s); }
+.ui-timeline button:hover { color: var(--text); background: #17222d55; }
+.ui-timeline-node { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #3d6a5d; background: var(--bg); color: var(--mint); font-size: 15px; transition: background var(--motion-fast, .2s), color var(--motion-fast, .2s), transform var(--motion-fast, .2s); }
+.ui-timeline button.active .ui-timeline-node, .ui-timeline button:hover .ui-timeline-node { background: var(--mint); color: #10241f; }
+.ui-timeline button.active { color: var(--text); }
+.ui-timeline strong { font-size: 12px; font-weight: 550; line-height: 1.45; }
+.ui-timeline small { font-size: 10px; line-height: 1.5; color: var(--mint); }
+@media (max-width: 900px) {
+  .ui-timeline-track { top: 0; bottom: 0; left: 28px; right: auto; width: 2px; height: auto; }
+  .ui-timeline-fill { width: 100%; height: 100%; transform: none !important; }
+  .ui-timeline ol { grid-template-columns: 1fr; gap: 2px; }
+  .ui-timeline button { grid-template-columns: 44px 1fr; justify-items: start; align-items: center; column-gap: 14px; text-align: left; padding: 8px; }
+  .ui-timeline strong { grid-column: 2; }
+  .ui-timeline small { grid-column: 2; }
+  .ui-timeline-node { grid-row: 1 / span 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ui-timeline button, .ui-timeline-node { transition: none; }
+}
+
+/* ---------- DataTable ---------- */
+.ui-table { width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid var(--line); border-radius: var(--radius-lg, 9px); overflow: hidden; font-size: 12px; }
+.ui-table caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.ui-table th { text-align: left; padding: 12px 16px; background: #0e151e; color: var(--muted); font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; font-weight: 500; }
+.ui-table td { padding: 14px 16px; border-top: 1px solid var(--line); line-height: 1.7; color: #c3d2d8; vertical-align: top; background: var(--surface); }
+.ui-table tbody tr:hover td { background: var(--surface-raised, #16212b); }
+@media (max-width: 700px) {
+  .ui-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ui-table, .ui-table tbody, .ui-table tr, .ui-table td { display: block; }
+  .ui-table td { border-top: 0; padding: 8px 16px; }
+  .ui-table tr { border-top: 1px solid var(--line); padding: 8px 0; }
+  .ui-table tr:first-child { border-top: 0; }
+  .ui-table td::before { content: attr(data-label); display: block; margin-bottom: 4px; font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); }
+}
+
+/* ---------- LinkCard ---------- */
+.ui-linkcard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 15px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md, 7px);
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  transition: border-color var(--motion-fast, .2s), background var(--motion-fast, .2s), transform var(--motion-fast, .2s);
+}
+.ui-linkcard:hover { border-color: #6b9d90; background: var(--surface-raised, #16212b); transform: translateY(-2px); }
+.ui-linkcard-icon { color: var(--mint); flex-shrink: 0; }
+.ui-linkcard-body { display: grid; gap: 4px; flex: 1; min-width: 0; }
+.ui-linkcard-body strong { font-size: 13px; font-weight: 550; }
+.ui-linkcard-body small { font-size: 11px; line-height: 1.6; color: var(--muted); }
+.ui-linkcard-arrow { flex-shrink: 0; color: var(--muted); transition: transform var(--motion-fast, .2s), color var(--motion-fast, .2s); }
+.ui-linkcard:hover .ui-linkcard-arrow { color: var(--mint); transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce) {
+  .ui-linkcard, .ui-linkcard:hover, .ui-linkcard-arrow, .ui-linkcard:hover .ui-linkcard-arrow { transition: none; transform: none; }
+}

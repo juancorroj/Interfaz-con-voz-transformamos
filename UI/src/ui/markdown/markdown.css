@@ -1,0 +1,27 @@
+.md { max-width: 860px; color: #c6d9de; font-size: 14px; line-height: 1.85; }
+.md h2 { margin: 44px 0 14px; padding-top: 28px; border-top: 1px solid var(--line); font-size: 24px; font-weight: 450; color: var(--text); scroll-margin-top: 20px; }
+.md > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.md h3 { margin: 30px 0 10px; font-size: 18px; font-weight: 500; color: var(--text); scroll-margin-top: 20px; }
+.md h4, .md h5 { margin: 22px 0 8px; font-size: 15px; font-weight: 550; color: var(--text); }
+.md p { margin: 0 0 14px; }
+.md strong { color: var(--text); font-weight: 600; }
+.md em { color: #d6e4e8; }
+.md code { padding: 1px 6px; border-radius: 5px; background: #0d151d; border: 1px solid var(--line); color: #9bccbc; font-size: 12px; overflow-wrap: anywhere; }
+.md pre { margin: 0 0 18px; padding: 16px 18px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg, 9px); background: #0b1118; }
+.md pre code { padding: 0; border: 0; background: none; color: #c3d2d8; font-size: 12px; line-height: 1.7; overflow-wrap: normal; white-space: pre; }
+.md ul, .md ol { margin: 0 0 16px; padding-left: 24px; }
+.md li { margin: 4px 0; padding-left: 4px; }
+.md li > ul, .md li > ol { margin: 6px 0 4px; }
+.md li::marker { color: var(--mint); }
+.md hr { margin: 30px 0; border: 0; border-top: 1px solid var(--line); }
+.md blockquote { margin: 0 0 18px; padding: 8px 20px; border-left: 3px solid var(--mint); background: #0f1a22; border-radius: 0 var(--radius-lg, 9px) var(--radius-lg, 9px) 0; }
+.md blockquote p:last-child { margin-bottom: 0; }
+.md-table { margin: 0 0 22px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg, 9px); }
+.md-table table { width: 100%; border-collapse: collapse; font-size: 12px; line-height: 1.6; }
+.md-table th { padding: 10px 14px; text-align: left; font-weight: 550; color: var(--text); background: #111b25; white-space: nowrap; }
+.md-table td { padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top; min-width: 90px; }
+.md-table td code { white-space: nowrap; }
+.md-link { display: inline; padding: 0; border: 0; background: none; color: var(--mint); font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; text-align: inherit; }
+.md-link:hover { color: #c5f3e2; }
+.md-ref { color: #d6e4e8; }
+.md-table:focus-visible, .md pre:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }

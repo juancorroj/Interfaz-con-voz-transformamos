@@ -1,0 +1,24 @@
+.bar-chart { list-style: none; display: grid; gap: 8px; padding: 0; }
+.bar-chart li { display: grid; grid-template-columns: minmax(150px, 1.1fr) minmax(0, 2fr) minmax(86px, auto); align-items: center; gap: 14px; padding: 6px 10px; border: 1px solid transparent; border-radius: var(--radius-md, 7px); }
+.bar-label { display: grid; gap: 2px; font-size: 11px; line-height: 1.4; color: #b9c8d0; }
+.bar-label small { font-size: 9px; letter-spacing: .5px; text-transform: uppercase; color: var(--muted); }
+.bar-track { height: 12px; border-radius: 999px; background: #17222d; overflow: hidden; }
+.bar-fill { display: block; height: 100%; border-radius: 999px; background: #3b6a5e; transition: width var(--motion-slow, .8s) var(--ease-out, ease); }
+.bar-value { font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; color: var(--text); }
+.bar-chart li.mark-reference .bar-fill { background: #5d8f82; }
+.bar-chart li.mark-reference .bar-label small { color: var(--accent-comprension, #bbadf1); }
+.bar-chart li.mark-selected { border-color: #3d6a5d; background: #15302c; }
+.bar-chart li.mark-selected .bar-fill { background: linear-gradient(90deg, #4f9d86, var(--mint)); }
+.bar-chart li.mark-selected .bar-label { color: var(--text); }
+@media (max-width: 700px) {
+  .bar-chart li { grid-template-columns: 1fr auto; row-gap: 6px; }
+  .bar-track { grid-column: 1 / -1; grid-row: 2; }
+}
+@media (prefers-reduced-motion: reduce) { .bar-fill { transition: none; } }
+
+
+/* ---------- RangeBar ---------- */
+.rangebar { position: relative; height: 14px; margin-bottom: 18px; border-radius: 999px; background: #17222d; border: 1px solid var(--line); }
+.rangebar-fill { position: absolute; top: -1px; bottom: -1px; border-radius: 999px; background: linear-gradient(90deg, #4f9d86, var(--mint)); }
+.rangebar-ticks { position: absolute; inset: 20px 0 auto 0; display: flex; justify-content: space-between; font-size: 9px; color: #6f8796; }
+.rangebar-ticks i { font-style: normal; }
